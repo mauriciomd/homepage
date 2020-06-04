@@ -1,0 +1,126 @@
+@import 'colors';
+
+#menu-icon, hr {
+  display: none;
+}
+
+nav {
+  background-color: $background-menu;
+  text-align: center;
+  height: 100vh;
+  width: 18rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    margin-top: 3.5rem;
+    font-size: 32px;
+    color: $dark-purple;
+    border-bottom: 2px solid $dark-purple;
+    display: inline-block;
+  }
+    
+  a {
+    text-decoration: none;     
+    color: $dark-purple;
+  }
+
+  ul {
+    margin-top: 8rem;
+    list-style: none;
+    
+    li {
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      font-size: 24px;
+
+      a:hover {
+        border-bottom: 1px solid $dark-purple;
+      }
+    }
+  }
+  
+  #social-network {
+    display: block;
+    margin-top: auto;
+    margin-bottom: 3rem;
+
+    img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
+
+    a {
+      & + a {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  #menu-icon {
+    display: block;
+    visibility: visible;
+    position: absolute;
+    margin: 0.7rem;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: auto;
+    visibility: hidden;
+    z-index: 3;
+
+    h1 {
+      display: none;
+    }
+
+    ul {
+      margin: 0 auto;
+
+      li {
+        margin: 0;
+        width: 100vw;
+
+        a {
+          font-size: 20px;
+        }
+
+        hr {
+          display: block;
+          margin: 0.2rem auto 0;
+          border: 0.01rem solid $dark-purple;
+          width: 90%;
+        }
+      }
+    }
+    
+    #social-network {
+      display: none;
+    }
+  }
+
+  .show-menu {
+    animation-name: showMenu;
+    animation-duration: 0.3s;
+    visibility: visible;
+    top: 0%;
+  }
+
+  @keyframes showMenu {
+    from {
+      top: -40%;
+    }
+    to {
+      top: 0%;
+    }
+  }
+}

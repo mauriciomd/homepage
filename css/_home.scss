@@ -1,0 +1,57 @@
+@import 'colors';
+
+#home {
+  background-image: url("../images/roman-nguyen-5ykyPNILfWM-unsplash.jpg");
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+
+  #home-content {
+    img {
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      margin-top: 11rem;
+    }
+
+    div {
+      width: 60%;
+      margin: 6rem auto;
+    
+      p {
+        font-size: 20px; 
+        color: $white;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  #home-content {
+    width: calc(100% - 18rem);
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    z-index: 2;
+    text-align: center;
+
+    div {
+      width: 60%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #home-content {
+    width: 100vw;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    clear: both;
+
+    div {
+      width: 90%;
+    }
+  }
+}
